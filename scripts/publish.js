@@ -33,22 +33,25 @@ const reWriteLerna = (packages) => {
 const publish = async () => {
   const packages = getPackagePath()
   const publishPackages = await choosePackage(packages)
-  console.log(publishPackages)
-  reWriteLerna(publishPackages)
-  execa.commandSync('git commit -am "发包"', {
-    stdio: 'inherit',
-    cwd,
-  })
-
-  execa.commandSync('git push', {
-    stdio: 'inherit',
-    cwd,
-  })
-
-  execa.commandSync('lerna publish', {
-    stdio: 'inherit',
-    cwd,
-  })
+  if(publishPackages.packages.length !== 0){
+    reWriteLerna(publishPackages)
+    execa.commandSync('git commit -am lerna', {
+      stdio: 'inherit',
+      cwd,
+    })
+  
+    execa.commandSync('git push', {
+      stdio: 'inherit',
+      cwd,
+    })
+  
+    execa.commandSync('lerna publish', {
+      stdio: 'inherit',
+      cwd,
+    })
+  } else {
+    console.log("没有选择包")
+  }
 }
 
 publish()
