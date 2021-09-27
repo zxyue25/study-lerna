@@ -1,7 +1,5 @@
 {
   "packages": [
-    "packages/study-lerna-package1",
-    "packages/study-lerna-package2"
   ],
   "version": "independent"
 }
