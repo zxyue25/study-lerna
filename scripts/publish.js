@@ -34,7 +34,7 @@ const publish = async () => {
   const packages = getPackagePath()
   const publishPackages = await choosePackage(packages)
   reWriteLerna(publishPackages)
-  execa.commandSync('lerna publish from-package --yes', {
+  execa.commandSync('lerna publish', {
     stdio: 'inherit',
     cwd,
   })
