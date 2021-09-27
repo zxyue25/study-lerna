@@ -1,11 +1,11 @@
-# `stylelint`
+# `package2`
 
 > TODO: description
 
 ## Usage
 
 ```
-const stylelint = require('stylelint');
+const package2 = require('package2');
 
 // TODO: DEMONSTRATE API
 ```

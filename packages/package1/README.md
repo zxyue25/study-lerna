@@ -1,11 +1,11 @@
-# `eslint`
+# `package1`
 
 > TODO: description
 
 ## Usage
 
 ```
-const eslint = require('eslint');
+const package1 = require('package1');
 
 // TODO: DEMONSTRATE API
 ```
