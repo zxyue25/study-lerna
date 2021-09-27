@@ -33,6 +33,7 @@ const reWriteLerna = (packages) => {
 const publish = async () => {
   const packages = getPackagePath()
   const publishPackages = await choosePackage(packages)
+  console.log(publishPackages)
   reWriteLerna(publishPackages)
   execa.commandSync('git commit -am "发包"', {
     stdio: 'inherit',
