@@ -34,7 +34,7 @@ const publish = async () => {
   const packages = getPackagePath()
   const publishPackages = await choosePackage(packages)
   reWriteLerna(publishPackages)
-  execa.commandSync('lerna publish', {
+  execa.commandSync('lerna publish & git commit -am "发包" & git push', {
     stdio: 'inherit',
     cwd,
   })
